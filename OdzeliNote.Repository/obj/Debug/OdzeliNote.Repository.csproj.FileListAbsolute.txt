@@ -1,0 +1,14 @@
+D:\Projects\Odzelinote\OdzeliNote.Repository\bin\Debug\OdzeliNote.Repository.dll.config
+D:\Projects\Odzelinote\OdzeliNote.Repository\bin\Debug\OdzeliNote.Repository.dll
+D:\Projects\Odzelinote\OdzeliNote.Repository\bin\Debug\OdzeliNote.Repository.pdb
+D:\Projects\Odzelinote\OdzeliNote.Repository\bin\Debug\EntityFramework.dll
+D:\Projects\Odzelinote\OdzeliNote.Repository\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Odzelinote\OdzeliNote.Repository\bin\Debug\EntityFramework.xml
+D:\Projects\Odzelinote\OdzeliNote.Repository\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Odzelinote\OdzeliNote.Repository\obj\Debug\OdzeliNote.Repository.csprojResolveAssemblyReference.cache
+D:\Projects\Odzelinote\OdzeliNote.Repository\obj\Debug\OdzeliNote.Repository.Migrations.CreateDatabase.resources
+D:\Projects\Odzelinote\OdzeliNote.Repository\obj\Debug\OdzeliNote.Repository.Migrations.UpdateDB.resources
+D:\Projects\Odzelinote\OdzeliNote.Repository\obj\Debug\OdzeliNote.Repository.Migrations.AddPropertyCategory.resources
+D:\Projects\Odzelinote\OdzeliNote.Repository\obj\Debug\OdzeliNote.Repository.csproj.GenerateResource.Cache
+D:\Projects\Odzelinote\OdzeliNote.Repository\obj\Debug\OdzeliNote.Repository.dll
+D:\Projects\Odzelinote\OdzeliNote.Repository\obj\Debug\OdzeliNote.Repository.pdb

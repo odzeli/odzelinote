@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OdzeliNote.Api</name>
+    </assembly>
+    <members>
+        <member name="T:OdzeliNote.Api.Controllers.CategoryController">
+            <summary>
+            Управление категориями
+            </summary>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.CategoryController.Get(System.Guid)">
+            <summary>
+            Получить категорию
+            </summary>
+            <param name="categoryId">Идентификатор категории</param>
+            <returns></returns>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.CategoryController.Create(OdzeliNote.Manager.Model.Category)">
+            <summary>
+            Создание категории
+            </summary>
+            <param name="category">Категория</param>
+            <returns></returns>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.CategoryController.Remove(System.Guid)">
+            <summary>
+            Удаление категории
+            </summary>
+            <param name="categoryId">Идентификатор категории</param>
+            <returns></returns>
+        </member>
+        <member name="T:OdzeliNote.Api.Controllers.NoteController">
+            <summary>
+            Управление заметками
+            </summary>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.NoteController.Get(System.Guid)">
+            <summary>
+            Получени заметки для пользователя
+            </summary>
+            <param name="noteId">Идентификатор пользователя</param>
+            <returns></returns>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.NoteController.Create(OdzeliNote.Manager.Model.Note)">
+            <summary>
+            Создание заметки
+            </summary>
+            <param name="note">Заметка</param>
+            <returns></returns>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.NoteController.Remove(System.Guid)">
+            <summary>
+            Удалени заметки
+            </summary>
+            <param name="noteId">Идентификатор заметки</param>
+        </member>
+        <member name="T:OdzeliNote.Api.Controllers.UsersController">
+            <summary>
+            Управление пользователями
+            </summary>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.UsersController.Get(System.Guid)">
+            <summary>
+            Получение пользователя
+            </summary>
+            <param name="id">Идентификатор пользователя</param>
+            <returns></returns>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.UsersController.Create(OdzeliNote.Manager.Model.User)">
+            <summary>
+            Создание пользователя
+            </summary>
+            <param name="user">Пользователь</param>
+            <returns></returns>
+        </member>
+        <member name="M:OdzeliNote.Api.Controllers.UsersController.Delete(System.Guid)">
+            <summary>
+            Удаление пользователя
+            </summary>
+            <param name="id">Идентификатор пользователя</param>
+        </member>
+    </members>
+</doc>

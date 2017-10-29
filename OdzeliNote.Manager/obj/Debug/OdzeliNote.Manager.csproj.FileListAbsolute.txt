@@ -1,0 +1,13 @@
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\OdzeliNote.Manager.dll.config
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\OdzeliNote.Manager.dll
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\OdzeliNote.Manager.pdb
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\EntityFramework.dll
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\OdzeliNote.Repository.dll
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\OdzeliNote.Repository.pdb
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\OdzeliNote.Repository.dll.config
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\EntityFramework.xml
+D:\Projects\Odzelinote\OdzeliNote.Manager\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Odzelinote\OdzeliNote.Manager\obj\Debug\OdzeliNote.Manager.csprojResolveAssemblyReference.cache
+D:\Projects\Odzelinote\OdzeliNote.Manager\obj\Debug\OdzeliNote.Manager.dll
+D:\Projects\Odzelinote\OdzeliNote.Manager\obj\Debug\OdzeliNote.Manager.pdb
