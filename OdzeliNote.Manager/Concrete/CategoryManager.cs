@@ -3,10 +3,11 @@ using System.Linq;
 using OdzeliNote.Repository;
 using OdzeliNote.Manager.Model;
 using System.Collections.Generic;
+using OdzeliNote.Manager.Abstract;
 
 namespace OdzeliNote.Manager.Concrete
 {
-    public class CategoryManager
+    public class CategoryManager : ICategoryManager
     {
         string _connectionString;
         public CategoryManager(string connectionString)

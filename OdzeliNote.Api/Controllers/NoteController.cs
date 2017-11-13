@@ -2,6 +2,7 @@
 using System.Web.Http;
 using OdzeliNote.Manager;
 using OdzeliNote.Manager.Model;
+using OdzeliNote.Manager.Concrete;
 
 namespace OdzeliNote.Api.Controllers
 {
@@ -10,16 +11,24 @@ namespace OdzeliNote.Api.Controllers
     /// </summary>
     public class NoteController : ApiController
     {
-        NoteManager _userManager = new NoteManager("DefaultConnection");
+        private readonly INoteManager _noteManager;
+        string _connectionString;
+
+        public NoteController()
+        {
+            _connectionString = "DefaultConnection";
+            _noteManager = new NoteManager(_connectionString, new UserManager(_connectionString));
+        }
         /// <summary>
         /// Получени заметки для пользователя
         /// </summary>
         /// <param name="noteId">Идентификатор пользователя</param>
         /// <returns></returns>
         [HttpGet]
-        public Note Get(Guid noteId)
+        [Route("api/note/{id}")]
+        public Note Get(Guid id)
         {
-            return _userManager.GetNote(noteId);
+            return _noteManager.GetNote(id);
         }
         /// <summary>
         /// Создание заметки
@@ -29,7 +38,7 @@ namespace OdzeliNote.Api.Controllers
         [HttpPost]
         public Note Create(Note note)
         {
-            return _userManager.Create(note);
+            return _noteManager.Create(note);
         }
         /// <summary>
         /// Удалени заметки
@@ -38,7 +47,21 @@ namespace OdzeliNote.Api.Controllers
         [HttpDelete]
         public void Remove(Guid noteId)
         {
-            _userManager.Remove(noteId);
+            _noteManager.Remove(noteId);
+        }
+
+        [HttpGet]
+        [Route("api/note/testId/{id}")]
+        public Guid TestId(Guid id)
+        {
+            return id;
+        }
+
+        [HttpGet]
+        [Route("api/note/test")]
+        public string Test()
+        {
+            return "rrr";
         }
     }
 }

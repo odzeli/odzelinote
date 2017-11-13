@@ -1,26 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using OdzeliNote.Manager.Model;
 using OdzeliNote.Repository;
-using System;
+using OdzeliNote.Manager.Abstract;
 
 namespace OdzeliNote.Manager.Concrete
 {
-    public class UserManager
+    public class UserManager : IUserManager
     {
-        string _connectionString;
+        private readonly string _connectionString;
 
         public UserManager(string connectionString)
         {
             _connectionString = connectionString;
         }
 
-       
         public User GetUser(Guid id)
         {
             using (var context = new UserContext(_connectionString))
             {
-                var user = context.User.Where(u => u.Id == id).Select(u => new User()
+                var contextUser = context.User.ToList();
+                var user = contextUser.Where(u => u.Id == id).Select(u => new User()
                 {
                     Id = u.Id,
                     Name = u.Name

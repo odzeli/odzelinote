@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICategoryManager.cs" />
+    <Compile Include="Abstract\IUserManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\NoteManager.cs" />
     <Compile Include="Abstract\INoteManager.cs" />

@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using OdzeliNote.Manager.Model;
 using OdzeliNote.Manager.Concrete;
+using OdzeliNote.Manager.Abstract;
 
 namespace OdzeliNote.Api.Controllers
 {
@@ -14,7 +12,13 @@ namespace OdzeliNote.Api.Controllers
     /// </summary>
     public class CategoryController : ApiController
     {
-        CategoryManager _categoryManager = new CategoryManager("DefaultConnection");
+        private readonly string _connectionString;
+        private readonly ICategoryManager _categoryManager;
+        public CategoryController()
+        {
+            _connectionString = "DefaultConnection";
+            _categoryManager = new CategoryManager(_connectionString);
+        }
         /// <summary>
         /// Получить категорию
         /// </summary>
