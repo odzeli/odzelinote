@@ -1,25 +1,28 @@
 ﻿using System;
-using OdzeliNote.Manager.Model;
 using OdzeliNote.Repository;
+using OdzeliNote.Manager.Model;
 using System.Collections.Generic;
+using OdzeliNote.Manager.Abstract;
+using OdzeliNote.Manager.Concrete;
 
 namespace OdzeliNote.Manager
 {
     public class NoteManager : INoteManager
     {
         string _connectionString;
+        private readonly IUserManager _userManager;
 
-        public NoteManager(string connectionString)
+        public NoteManager(string connectionString, IUserManager userManager)
         {
             _connectionString = connectionString;
+            _userManager = userManager;
         }
 
         public Note Create(Note note)
         {
             using (var context = new UserContext(_connectionString))
             {
-                var userManager = new Concrete.UserManager("DefaultConnection");
-                var user = userManager.GetUser(note.UserId);
+                var user = _userManager.GetUser(note.UserId);
                 var notetwo = new Repository.Model.Note()
                 {
                     Id = note.Id,

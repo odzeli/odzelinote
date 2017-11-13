@@ -3,6 +3,7 @@ using NLog;
 using System.Web.Http;
 using OdzeliNote.Manager.Model;
 using OdzeliNote.Manager.Concrete;
+using OdzeliNote.Manager.Abstract;
 
 namespace OdzeliNote.Api.Controllers
 {
@@ -11,6 +12,14 @@ namespace OdzeliNote.Api.Controllers
     /// </summary>
     public class UsersController : ApiController
     {
+        private readonly IUserManager _usersManager;
+        private readonly string _connectinString;
+
+        public UsersController()
+        {
+            _connectinString = "DefaultConnection";
+            _usersManager = new UserManager(_connectinString);
+        }
 
         private static Logger logger = LogManager.GetCurrentClassLogger();
         /// <summary>
@@ -19,11 +28,11 @@ namespace OdzeliNote.Api.Controllers
         /// <param name="id">Идентификатор пользователя</param>
         /// <returns></returns>
         [HttpGet]
+        [Route("api/users/{id}")]
         public User Get(Guid id)
         {
             logger.Info("Получение пользователя");
-            var _usersRepository = new UserManager("DefaultConnection");
-            return _usersRepository.GetUser(id);
+            return _usersManager.GetUser(id);
         }
         /// <summary>
         /// Создание пользователя
@@ -33,8 +42,7 @@ namespace OdzeliNote.Api.Controllers
         [HttpPost]
         public User Create(User user)
         {
-            var _usersRepository = new UserManager("DefaultConnection");
-            return _usersRepository.Create(user);
+            return _usersManager.Create(user);
         }
         /// <summary>
         /// Удаление пользователя
@@ -43,8 +51,7 @@ namespace OdzeliNote.Api.Controllers
         [HttpDelete]
         public void Delete(Guid id)
         {
-            var _usersRepository = new UserManager("DefaultConnection");
-            _usersRepository.Delete(id);
+            _usersManager.Delete(id);
         }
     }
 }

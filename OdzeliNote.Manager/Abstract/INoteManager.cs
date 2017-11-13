@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace OdzeliNote.Manager
 {
-    interface INoteManager
+    public interface INoteManager
     {
         Note Create(Note note);
 

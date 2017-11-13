@@ -2,40 +2,47 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OdzeliNote.Manager.Concrete;
 using OdzeliNote.Repository;
-
+using OdzeliNote.Manager.Abstract;
 
 namespace OdzeliNote.Tests
 {
     [TestClass]
     public class CategoryManagerTests
     {
+        private readonly string _connectionString;
+        private readonly ICategoryManager _categoryManager;
+
+        public CategoryManagerTests()
+        {
+            _connectionString = "DefaultConnection";
+            _categoryManager = new CategoryManager(_connectionString);
+        }
+
         [TestMethod]
         public void CreateCategory()
         {
-            var categoryManager = new CategoryManager("DefaultConnection");
             var category = new Manager.Model.Category()
             {
                 Name = "Magomed",
                 Id = Guid.Empty,
                 UserId = Guid.Parse("7D900474-7EB3-E711-8302-AC9E17413A67")
             };
-            var categorytwo = categoryManager.Create(category);
+            var categorytwo = _categoryManager.Create(category);
             Assert.AreEqual(categorytwo.Name, category.Name);
         }
 
         [TestMethod]
         public void DeleteCategoryTest()
         {
-            var categoryManager = new CategoryManager("DefaultConnection");
             var category = new Manager.Model.Category()
             {
                 Name = "Magomed",
                 Id = Guid.Empty,
                 UserId = Guid.Parse("7D900474-7EB3-E711-8302-AC9E17413A67")
             };
-            var categoryMaga = categoryManager.Create(category);
-            var categoryId = categoryManager.Delete(categoryMaga.Id);
-            var gettingCategory = categoryManager.GetUserCategories(category.UserId);
+            var categoryMaga = _categoryManager.Create(category);
+            var categoryId = _categoryManager.Delete(categoryMaga.Id);
+            var gettingCategory = _categoryManager.GetUserCategories(category.UserId);
             Assert.AreEqual(gettingCategory, null);
         }
 
